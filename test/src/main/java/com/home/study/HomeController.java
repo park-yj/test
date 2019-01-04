@@ -1,4 +1,4 @@
-package com.home.controller;
+package com.home.study;
 
 import java.text.DateFormat;
 import java.util.Date;
