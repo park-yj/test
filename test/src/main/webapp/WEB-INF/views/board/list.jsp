@@ -33,7 +33,7 @@
 			<tbody>	
 				<%-- <c:if test="${empty requestScope.list }" var="isEmpty">
 					<tr>
-						<td colspan="6" class="text-center">등록된 게시물이 없습니다</td>
+						<td colspan="6" class="text-center">등록된 게시물이 없습니다z</td>
 					</tr>
 				</c:if> --%>
 				<c:if test="${not isEmpty }">
