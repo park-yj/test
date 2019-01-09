@@ -24,10 +24,17 @@
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
+    
+    <!-- mybatis -->
+    <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath*:config/spring/context-*.xml</param-value>
+    </context-param>
 		
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+
 
 </web-app>

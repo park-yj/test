@@ -35,7 +35,7 @@
 		<nav class="navbar navbar-inverse">
 	  			<ul class="logo">
 	  				<li><a href="#">logo</a></li>
-	  				<li><a href="#">게시판1</a></li>
+	  				<li><a href="<c:url value='/list.do'/>">게시판1</a></li>
 	  				<li><a href="#">게시판2</a></li>
 	  				<li><a href="#">게시판3</a></li>
 	  				<li class="login pull-right"><a href="<c:url value='/login/login.do'/>">login</a></li>
