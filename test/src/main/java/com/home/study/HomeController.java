@@ -2,7 +2,10 @@ package com.home.study;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
+
+import javax.annotation.Resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,12 +14,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.tistory.pentode.service.BoardService;
+import com.tistory.pentode.vo.BoardVO;
+
 /**
- * Handles requests for the application home page..
+ * Handles requests for the application home page.
  */
 @Controller
 public class HomeController {
 	
+	@Resource(name = "boardService")
+	private BoardService boardService;
+
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	/**
@@ -33,7 +42,19 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "hello";
+		return "home";
+	}
+	
+	@RequestMapping(value = "/boardList.do")
+	public String boardList(Model model) throws Exception {
+
+	    List<BoardVO> list = boardService.selectBoardList();
+
+	    logger.info(list.toString());
+
+	    model.addAttribute("list", list);
+
+	    return "boardList";
 	}
 	
 }
